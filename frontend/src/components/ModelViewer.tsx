@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import type { ModelParameters } from "../types";
 import "./ModelViewer.css";
 
@@ -13,8 +14,8 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 		scene: THREE.Scene;
 		camera: THREE.PerspectiveCamera;
 		renderer: THREE.WebGLRenderer;
+		controls: OrbitControls;
 		mesh: THREE.Group;
-		frameId: number;
 	} | null>(null);
 
 	// Initialize Three.js scene
@@ -27,7 +28,7 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 
 		// Scene
 		const scene = new THREE.Scene();
-		scene.background = new THREE.Color(0x0f0f1a);
+		scene.background = new THREE.Color(0xf5f0e8);
 
 		// Camera
 		const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
@@ -40,6 +41,13 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 		renderer.shadowMap.enabled = true;
 		renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 		container.appendChild(renderer.domElement);
+
+		// Controls
+		const controls = new OrbitControls(camera, renderer.domElement);
+		controls.enableDamping = true;
+		controls.dampingFactor = 0.05;
+		controls.minDistance = 50;
+		controls.maxDistance = 500;
 
 		// Lights
 		const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
@@ -57,23 +65,21 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 		scene.add(pointLight);
 
 		// Grid helper
-		const gridHelper = new THREE.GridHelper(500, 50, 0x333333, 0x222222);
+		const gridHelper = new THREE.GridHelper(500, 50, 0xd4cfc7, 0xe8e3db);
 		scene.add(gridHelper);
 
 		// Initial mesh group
 		const mesh = new THREE.Group();
 		scene.add(mesh);
 
-		// Controls - simple auto-rotation
-		let rotation = 0;
+		// Animation loop
 		const animate = () => {
-			rotation += 0.005;
-			mesh.rotation.y = rotation;
+			requestAnimationFrame(animate);
+			controls.update();
 			renderer.render(scene, camera);
-			sceneRef.current!.frameId = requestAnimationFrame(animate);
 		};
 
-		sceneRef.current = { scene, camera, renderer, mesh, frameId: 0 };
+		sceneRef.current = { scene, camera, renderer, controls, mesh };
 		animate();
 
 		// Handle resize
@@ -91,8 +97,8 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 		return () => {
 			window.removeEventListener("resize", handleResize);
 			if (sceneRef.current) {
-				cancelAnimationFrame(sceneRef.current.frameId);
-				renderer.dispose();
+				sceneRef.current.controls.dispose();
+				sceneRef.current.renderer.dispose();
 				container.removeChild(renderer.domElement);
 			}
 		};
@@ -120,9 +126,9 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 
 		// Material
 		const material = new THREE.MeshStandardMaterial({
-			color: 0x3b82f6,
-			metalness: 0.3,
-			roughness: 0.4,
+			color: 0xff8c69,
+			metalness: 0.2,
+			roughness: 0.3,
 		});
 
 		// Create hollow box (5 walls for a box with open bottom, or 6 for closed)
@@ -178,7 +184,7 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 		// Ventilation holes
 		if (hasVentilation) {
 			const holeGeo = new THREE.CylinderGeometry(3, 3, t + 1, 16);
-			const holeMaterial = new THREE.MeshStandardMaterial({ color: 0x0f0f1a });
+			const holeMaterial = new THREE.MeshStandardMaterial({ color: 0xf5f0e8 });
 
 			for (let i = -2; i <= 2; i++) {
 				for (let j = -1; j <= 1; j++) {
@@ -194,7 +200,7 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 		if (hasMountingHoles) {
 			const mountHoleGeo = new THREE.CylinderGeometry(2, 2, t + 1, 16);
 			const mountHoleMaterial = new THREE.MeshStandardMaterial({
-				color: 0x0f0f1a,
+				color: 0xf5f0e8,
 			});
 			const mountOffset = 5;
 
@@ -221,7 +227,7 @@ export function ModelViewer({ parameters }: ModelViewerProps) {
 			<div className="viewer-header">
 				<h3>3D Предпросмотр</h3>
 				<div className="viewer-controls">
-					<span className="viewer-hint">🖱️ Авто-вращение</span>
+					<span className="viewer-hint">🖱️ Вращение мышкой</span>
 				</div>
 			</div>
 			<div ref={containerRef} className="viewer-canvas" />

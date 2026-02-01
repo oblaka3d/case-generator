@@ -8,7 +8,7 @@
 	gap: 8px;
 	font-size: 0.875rem;
 	font-weight: 600;
-	color: rgba(255, 255, 255, 0.9);
+	color: rgba(45, 42, 38, 0.9);
 	margin-bottom: 8px;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
@@ -21,10 +21,10 @@
 .selector-trigger {
 	width: 100%;
 	padding: 12px 16px;
-	background: rgba(255, 255, 255, 0.05);
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(45, 42, 38, 0.12);
 	border-radius: 10px;
-	color: #fff;
+	color: #2d2a26;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -35,8 +35,9 @@
 }
 
 .selector-trigger:hover {
-	background: rgba(255, 255, 255, 0.1);
-	border-color: rgba(233, 69, 96, 0.5);
+	background: #ffffff;
+	border-color: #ff8c69;
+	box-shadow: 0 2px 8px rgba(255, 140, 105, 0.15);
 }
 
 .trigger-content {
@@ -53,21 +54,21 @@
 
 .model-desc {
 	font-size: 0.8rem;
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(45, 42, 38, 0.6);
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
 .placeholder {
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(45, 42, 38, 0.5);
 	font-size: 0.9rem;
 }
 
 .chevron {
 	transition: transform 0.2s;
 	flex-shrink: 0;
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(45, 42, 38, 0.5);
 }
 
 .chevron.open {
@@ -79,13 +80,13 @@
 	top: calc(100% + 8px);
 	left: 0;
 	right: 0;
-	background: #1a1a2e;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: #ffffff;
+	border: 1px solid rgba(45, 42, 38, 0.08);
 	border-radius: 10px;
 	max-height: 300px;
 	overflow-y: auto;
 	z-index: 100;
-	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .option {
@@ -93,8 +94,8 @@
 	padding: 16px;
 	background: transparent;
 	border: none;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-	color: #fff;
+	border-bottom: 1px solid rgba(45, 42, 38, 0.05);
+	color: #2d2a26;
 	cursor: pointer;
 	text-align: left;
 	transition: all 0.2s;
@@ -105,12 +106,12 @@
 }
 
 .option:hover {
-	background: rgba(233, 69, 96, 0.1);
+	background: rgba(255, 140, 105, 0.08);
 }
 
 .option.selected {
-	background: rgba(233, 69, 96, 0.2);
-	border-left: 3px solid #e94560;
+	background: rgba(255, 140, 105, 0.15);
+	border-left: 3px solid #ff8c69;
 }
 
 .option-content {
@@ -126,7 +127,7 @@
 
 .option-desc {
 	font-size: 0.8rem;
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(45, 42, 38, 0.6);
 }
 
 .option-params {
@@ -138,8 +139,8 @@
 
 .option-params span {
 	font-size: 0.75rem;
-	color: rgba(255, 255, 255, 0.5);
-	background: rgba(255, 255, 255, 0.05);
+	color: rgba(45, 42, 38, 0.5);
+	background: rgba(45, 42, 38, 0.05);
 	padding: 4px 8px;
 	border-radius: 4px;
 }
@@ -154,10 +155,10 @@
 }
 
 .selector-options::-webkit-scrollbar-thumb {
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(45, 42, 38, 0.15);
 	border-radius: 3px;
 }
 
 .selector-options::-webkit-scrollbar-thumb:hover {
-	background: rgba(255, 255, 255, 0.3);
+	background: rgba(45, 42, 38, 0.25);
 }

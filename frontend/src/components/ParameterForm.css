@@ -1,17 +1,17 @@
 .parameter-form {
 	padding: 20px;
-	background: rgba(255, 255, 255, 0.03);
+	background: rgba(255, 255, 255, 0.6);
 	border-radius: 12px;
-	border: 1px solid rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(45, 42, 38, 0.06);
 }
 
 .form-title {
 	font-size: 1rem;
 	font-weight: 600;
-	color: #fff;
+	color: #2d2a26;
 	margin: 0 0 20px 0;
 	padding-bottom: 12px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 1px solid rgba(45, 42, 38, 0.1);
 }
 
 .form-section {
@@ -25,7 +25,7 @@
 .section-title {
 	font-size: 0.8rem;
 	font-weight: 600;
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(45, 42, 38, 0.6);
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	margin: 0 0 12px 0;
@@ -41,7 +41,7 @@
 	align-items: center;
 	gap: 8px;
 	font-size: 0.875rem;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(45, 42, 38, 0.8);
 	margin-bottom: 8px;
 }
 
@@ -55,23 +55,23 @@
 .param-input {
 	flex: 1;
 	padding: 10px 12px;
-	background: rgba(0, 0, 0, 0.2);
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: #ffffff;
+	border: 1px solid rgba(45, 42, 38, 0.12);
 	border-radius: 8px;
-	color: #fff;
+	color: #2d2a26;
 	font-size: 0.95rem;
 	transition: all 0.2s;
 }
 
 .param-input:focus {
 	outline: none;
-	border-color: #e94560;
-	background: rgba(0, 0, 0, 0.3);
+	border-color: #ff8c69;
+	box-shadow: 0 0 0 3px rgba(255, 140, 105, 0.15);
 }
 
 .param-unit {
 	font-size: 0.8rem;
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(45, 42, 38, 0.5);
 	min-width: 30px;
 }
 
@@ -81,7 +81,7 @@
 	height: 4px;
 	-webkit-appearance: none;
 	appearance: none;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(45, 42, 38, 0.12);
 	border-radius: 2px;
 	cursor: pointer;
 }
@@ -91,7 +91,7 @@
 	appearance: none;
 	width: 16px;
 	height: 16px;
-	background: #e94560;
+	background: #ff8c69;
 	border-radius: 50%;
 	cursor: pointer;
 	transition: transform 0.2s;
@@ -104,7 +104,7 @@
 .param-slider::-moz-range-thumb {
 	width: 16px;
 	height: 16px;
-	background: #e94560;
+	background: #ff8c69;
 	border-radius: 50%;
 	cursor: pointer;
 	border: none;
@@ -122,14 +122,15 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 12px;
-	background: rgba(0, 0, 0, 0.2);
+	background: #ffffff;
 	border-radius: 8px;
 	cursor: pointer;
 	transition: background 0.2s;
+	border: 1px solid rgba(45, 42, 38, 0.06);
 }
 
 .toggle-item:hover {
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(255, 140, 105, 0.05);
 }
 
 .toggle-info {
@@ -137,7 +138,7 @@
 	align-items: center;
 	gap: 10px;
 	font-size: 0.9rem;
-	color: rgba(255, 255, 255, 0.9);
+	color: rgba(45, 42, 38, 0.9);
 }
 
 .toggle-input {
@@ -147,14 +148,14 @@
 .toggle-slider {
 	width: 44px;
 	height: 24px;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(45, 42, 38, 0.2);
 	border-radius: 12px;
 	position: relative;
 	transition: background 0.2s;
 }
 
 .toggle-slider::after {
-	content: "";
+	content: '';
 	position: absolute;
 	top: 2px;
 	left: 2px;
@@ -163,10 +164,11 @@
 	background: #fff;
 	border-radius: 50%;
 	transition: transform 0.2s;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .toggle-input:checked + .toggle-slider {
-	background: #e94560;
+	background: #ff8c69;
 }
 
 .toggle-input:checked + .toggle-slider::after {

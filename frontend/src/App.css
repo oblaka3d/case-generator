@@ -9,8 +9,8 @@ body {
 	font-family:
 		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
 		sans-serif;
-	background: #0a0a0f;
-	color: #fff;
+	background: #faf8f5;
+	color: #2d2a26;
 	overflow: hidden;
 }
 
@@ -26,7 +26,7 @@ body {
 	margin-left: 280px;
 	transition: margin-left 0.3s ease;
 	min-height: 100vh;
-	background: linear-gradient(135deg, #0a0a0f 0%, #12121a 100%);
+	background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%);
 }
 
 .main-content.sidebar-closed {
@@ -45,21 +45,21 @@ body {
 .controls-panel {
 	padding: 24px;
 	overflow-y: auto;
-	background: rgba(255, 255, 255, 0.02);
-	border-right: 1px solid rgba(255, 255, 255, 0.05);
+	background: rgba(255, 255, 255, 0.6);
+	border-right: 1px solid rgba(45, 42, 38, 0.08);
 }
 
 .panel-header {
 	margin-bottom: 24px;
 	padding-bottom: 20px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-bottom: 1px solid rgba(45, 42, 38, 0.1);
 }
 
 .panel-header h1 {
 	font-size: 1.5rem;
 	font-weight: 700;
 	margin-bottom: 8px;
-	background: linear-gradient(135deg, #fff 0%, #e94560 100%);
+	background: linear-gradient(135deg, #2d2a26 0%, #ff8c69 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -67,7 +67,7 @@ body {
 
 .subtitle {
 	font-size: 0.9rem;
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(45, 42, 38, 0.6);
 }
 
 /* Viewer panel */
@@ -84,7 +84,7 @@ body {
 	gap: 12px;
 	margin-top: 24px;
 	padding-top: 20px;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(45, 42, 38, 0.1);
 }
 
 .btn {
@@ -98,23 +98,23 @@ body {
 }
 
 .btn-primary {
-	background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+	background: linear-gradient(135deg, #ff8c69 0%, #ff7f50 100%);
 	color: #fff;
 }
 
 .btn-primary:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+	box-shadow: 0 8px 20px rgba(255, 140, 105, 0.3);
 }
 
 .btn-secondary {
-	background: rgba(255, 255, 255, 0.05);
-	color: rgba(255, 255, 255, 0.8);
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(45, 42, 38, 0.05);
+	color: rgba(45, 42, 38, 0.8);
+	border: 1px solid rgba(45, 42, 38, 0.1);
 }
 
 .btn-secondary:hover {
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(45, 42, 38, 0.1);
 }
 
 /* Scrollbar */
@@ -127,12 +127,12 @@ body {
 }
 
 .controls-panel::-webkit-scrollbar-thumb {
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(45, 42, 38, 0.15);
 	border-radius: 3px;
 }
 
 .controls-panel::-webkit-scrollbar-thumb:hover {
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(45, 42, 38, 0.25);
 }
 
 /* Responsive */
@@ -156,7 +156,7 @@ body {
 
 	.controls-panel {
 		border-right: none;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		border-bottom: 1px solid rgba(45, 42, 38, 0.08);
 	}
 
 	.viewer-panel {
